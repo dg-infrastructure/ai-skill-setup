@@ -16,14 +16,14 @@ npx @gruntwork-ai/skills-setup --repo . --key gw_mk_xxxxxxxxxxxxx
 
 Then restart Claude Code. The Gruntwork MCP tools and `/gruntwork-*` skills will be available.
 
-Get an API key at [app.gruntwork.io/settings/api-keys](https://app.gruntwork.io/settings/api-keys). If you don't pass `--key`, the tool still scaffolds everything — it just leaves a placeholder for you to fill in.
+Get an access token at [app.gruntwork.io/settings/profile#mcp-access-tokens](https://app.gruntwork.io/settings/profile#mcp-access-tokens). If you don't pass `--key`, the tool still scaffolds everything — it just leaves a placeholder for you to fill in.
 
 ## Options
 
 | Flag | Description |
 |------|-------------|
 | `--repo <path>` | Target repo (default: current directory) |
-| `--key <api-key>` | Gruntwork MCP API key. Alternative: set `GRUNTWORK_MCP_API_KEY` |
+| `--key <token>` | Gruntwork MCP access token. Alternative: set `GRUNTWORK_MCP_API_KEY` |
 | `--no-scan` | Skip the local filesystem scan (see below). `CLAUDE.md` is still written with placeholders for you to fill in. |
 
 ## What the scan does (and doesn't do)

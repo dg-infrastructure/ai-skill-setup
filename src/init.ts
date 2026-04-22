@@ -9,7 +9,7 @@
  *
  * Flags:
  *   --repo <path>   Target repo (default: cwd)
- *   --key <key>     Gruntwork MCP API key (or set GRUNTWORK_MCP_API_KEY)
+ *   --key <token>   Gruntwork MCP access token (or set GRUNTWORK_MCP_API_KEY)
  *   --no-scan       Skip the local filesystem scan for Gruntwork modules,
  *                   accounts, and regions. CLAUDE.md is still written with
  *                   placeholders. Nothing leaves the machine either way.
@@ -153,7 +153,7 @@ const claudeMd = `# Infrastructure Repository
 
 ## MCP Server
 Connected to the Gruntwork MCP server for module discovery, guidance, and semantic search.
-Create API keys at: https://app.gruntwork.io/settings/api-keys
+Create access tokens at: https://app.gruntwork.io/settings/profile#mcp-access-tokens
 
 ## Available Skills
 - \`/gruntwork-find\` -- discover modules for a requirement
@@ -175,7 +175,7 @@ await writeFileEnsureDir(join(claudeDir, "settings.json"), JSON.stringify({
     gruntwork: {
       url: MCP_URL,
       headers: {
-        Authorization: apiKey ? `Bearer ${apiKey}` : "Bearer <your-api-key-from-app.gruntwork.io/settings/api-keys>",
+        Authorization: apiKey ? `Bearer ${apiKey}` : "Bearer <your-access-token-from-app.gruntwork.io/settings/profile#mcp-access-tokens>",
       },
     },
   },
@@ -204,8 +204,8 @@ for (const file of skillFiles) {
 console.log("")
 if (!apiKey) {
   console.log("Next steps:")
-  console.log("  1. Create an API key at https://app.gruntwork.io/settings/api-keys")
-  console.log("  2. Update .claude/settings.json with your key")
+  console.log("  1. Create an access token at https://app.gruntwork.io/settings/profile#mcp-access-tokens")
+  console.log("  2. Update .claude/settings.json with your token")
   console.log("  3. Restart Claude Code")
 } else {
   console.log("Done! Restart Claude Code to pick up the Gruntwork MCP server.")
