@@ -4,7 +4,7 @@ One-command bootstrap for a [Claude Code](https://claude.com/claude-code) worksp
 
 Run it inside an infrastructure-live repo and it wires up:
 
-- **`.claude/settings.json`** — connects Claude Code to the hosted Gruntwork MCP server
+- **`.claude/settings.local.json`** — merges the Gruntwork MCP server config (with your access token) into your personal Claude Code settings. Existing keys are preserved; if the file isn't valid JSON, the tool refuses to overwrite. A matching `.gitignore` entry is added automatically so the token doesn't get committed.
 - **`.claude/skills/`** — a set of Claude Code skills (`/gruntwork-find`, `/gruntwork-deploy`, `/gruntwork-debug`, `/gruntwork-patcher`, `/gruntwork-terragrunt`)
 - **`CLAUDE.md`** — a detected-stack summary so Claude has context (modules in use, accounts, regions, Gruntwork version)
 
